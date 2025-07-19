@@ -197,24 +197,26 @@ html {
 
 .venue-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
-  margin-top: 2rem;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .venue-card {
-  background: white;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
+  text-align: center;
+  transition: transform 0.2s;
 }
 
 .venue-card img {
   width: 100%;
-  height: 180px;
-  border-radius: 10px;
-  object-fit: fill;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 .venue-card:hover {

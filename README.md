@@ -69,6 +69,11 @@ Bundle services with venue bookings
    Feedback overview
 
 ## For database
+
+CREATE DATABASE venue_booking;
+
+USE venue_booking;
+
 CREATE TABLE venues (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,

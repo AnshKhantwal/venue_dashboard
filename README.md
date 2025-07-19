@@ -67,3 +67,35 @@ Bundle services with venue bookings
    Revenue tracking
    Most popular venues
    Feedback overview
+
+-> For database
+CREATE TABLE venues (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    location VARCHAR(100),
+    capacity INT,
+    description TEXT,
+    image VARCHAR(255)
+    );
+
+CREATE TABLE bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    venue_name VARCHAR(100),
+    name VARCHAR(100),
+    email VARCHAR(100),
+    date DATE,
+    attendees INT
+    );
+
+CREATE TABLE blocked_dates (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    venue_name VARCHAR(100),
+    start_date DATE,
+    end_date DATE
+    );
+
+CREATE TABLE admins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100),
+    password VARCHAR(100)
+);

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin-dashboard.css" />
+  <script defer src="admin-dashboard.js"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h2>Venue Admin</h2>
+      <nav>
+        <button class="tab-link active" data-tab="add">Add Venue</button>
+        <button class="tab-link" data-tab="manage">Manage Venues</button>
+        <button class="tab-link" data-tab="block">Block Dates</button>
+        <button class="tab-link" data-tab="bookings">View Bookings</button>
+      </nav>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </aside>
+
+    <main class="content">
+      <!-- Add Venue Tab -->
+      <section id="add" class="tab-content active">
+        <h2>Add New Venue</h2>
+        <form id="addVenueForm" enctype="multipart/form-data">
+          <input type="text" placeholder="Venue Name" required id="venueName" />
+          <input type="text" placeholder="Location" required id="venueLocation" />
+          <input type="number" placeholder="Capacity" required id="venueCapacity" />
+          <textarea placeholder="Description" required id="venueDescription"></textarea>
+          <input type="file" id="venueImage" accept="image/*" required />
+          <button type="submit">Add Venue</button>
+        </form>
+      </section>
+
+      <!-- Manage Venues Tab -->
+      <section id="manage" class="tab-content">
+        <h2>Manage Venues</h2>
+        <div class="venue-list" id="venueList"></div>
+      </section>
+
+      <!-- Block Dates Tab -->
+      <section id="block" class="tab-content">
+        <h2>Block Dates</h2>
+        <form id="blockDateForm">
+          <select id="venueDropdown"></select>
+          <input type="date" id="startDate" required />
+          <input type="date" id="endDate" required />
+          <button type="submit">Block Dates</button>
+        </form>
+      </section>
+
+      <section id="bookings" class="tab-content">
+  <h2>Venue Bookings</h2>
+  <div id="bookingList" class="booking-cards-container"></div>
+</section>
+
+
+    </main>
+  </div>
+</body>
+</html>

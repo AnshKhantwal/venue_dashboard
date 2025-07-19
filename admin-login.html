@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login - VenueHub</title>
+  <link rel="stylesheet" href="admin-login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <form id="loginForm" class="login-card">
+      <center><h2>Admin Sign In</h2>
+      <p>Login using your credentials provided by the sales team</p></center>
+
+      <label for="username">UserName</label>
+      <input type="text" id="username" placeholder="Enter your username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required />
+
+      <button type="submit">Sign In</button>
+
+      <p class="note">Only registered venue owners can log in here.</p>
+    </form>
+  </div>
+
+  <script src="admin-login.js"></script>
+</body>
+</html>

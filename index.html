@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VenueBooker - Find & Book Venues</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-left">
+      <span class="logo">VenueBooker</span>
+      <select class="city-select">
+        <option>Mumbai</option>
+        <option selected>Delhi-NCR</option>
+        <option>Bangalore</option>
+        <option>Hyderabad</option>
+        <option>More Soon...</option>
+      </select>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#venues">Venues</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="navbar-right">
+      <a href="list-your-venue.html" class="list-business">New? List your venue in 2 minutes.</a>
+      <a href="/login" class="login-icon" title="User Login">👤</a>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Find the Perfect Venue for Every Occasion</h1>
+    <p>Book premium spaces for weddings, parties, conferences, and more. Or list your venue and start earning.</p>
+    <div class="hero-buttons">
+      <a href="#venues" class="btn btn-primary">Book a Venue</a>
+      <a href="list-your-venue.html" class="btn btn-secondary">List Your Venue</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Venues -->
+  <section class="venues" id="venues">
+    <div class="container">
+      <h2>Top Venues Near You</h2>
+      <div class="venue-cards" id="venueContainer">
+        <div class="venue-card">
+          <img src="https://img.freepik.com/free-photo/decorated-hall-wedding-is-ready-celebration_8353-10236.jpg?semt=ais_hybrid&w=740" alt="Venue 1">
+          <h3>Royal Palace Banquet</h3>
+          <p>Location: Delhi</p>
+          <p>Capacity: 300 People</p>
+          <button class="book-btn" data-id="1">Book Now</button>
+          <form class="booking-form" style="display: none;">
+  <input type="text" placeholder="Your Name" required />
+  <input type="email" placeholder="Your Email" required />
+  <input type="date" required />
+  <input type="number" placeholder="Attendees" required />
+  <button type="submit">Submit</button>
+</form>
+        </div>
+        <div class="venue-card">
+          <img src="https://media.istockphoto.com/id/178572410/photo/auditorium-theatre.jpg?s=612x612&w=0&k=20&c=T6aKq5ArtQPaNjKwAZi4WK0ACQCXTIJi09o9qUcl3uc=" alt="Venue 2">
+          <h3>Lakeview Resort</h3>
+          <p>Location: Mumbai</p>
+          <p>Capacity: 500 People</p>
+          <button class="book-btn" data-id="1">Book Now</button>
+          <form class="booking-form" style="display: none;">
+  <input type="text" placeholder="Your Name" required />
+  <input type="email" placeholder="Your Email" required />
+  <input type="date" placeholder="Select Date" required />
+  <input type="number" placeholder="Attendees" required />
+  <button type="submit">Submit</button>
+</form>
+        </div>
+        <!-- Future: Dynamic cards will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+  <div class="container">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-slider">
+      <button class="slider-btn prev">&#10094;</button>
+      <div class="testimonial-track">
+        <div class="testimonial">
+          <img src="https://i.pravatar.cc/60?img=41" alt="User 1">
+          <p>"Booking my engagement venue was so easy and affordable!"</p>
+          <h4>- Anjali Verma</h4>
+        </div>
+        <div class="testimonial">
+          <img src="https://i.pravatar.cc/60?img=11" alt="User 2">
+          <p>"VenueBooker helped us find the perfect place in no time."</p>
+          <h4>- Ramesh Kumar</h4>
+        </div>
+        <div class="testimonial">
+          <img src="https://i.pravatar.cc/60?img=32" alt="User 3">
+          <p>"Highly recommended for event organizers!"</p>
+          <h4>- Meena Shah</h4>
+        </div>
+        <div class="testimonial">
+          <img src="https://i.pravatar.cc/60?img=12" alt="User 4">
+          <p>"Smooth process and professional support."</p>
+          <h4>- Aarav Mehta</h4>
+        </div>
+        <div class="testimonial">
+          <img src="https://i.pravatar.cc/60?img=5" alt="User 5">
+          <p>"Easy to browse and book. Loved the experience."</p>
+          <h4>- Priya Sinha</h4>
+        </div>
+        <div class="testimonial">
+          <img src="https://i.pravatar.cc/60?img=60" alt="User 6">
+          <p>"Great for last-minute bookings and quick help!"</p>
+          <h4>- Saurabh Jain</h4>
+        </div>
+      </div>
+      <button class="slider-btn next">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+<footer class="footer" id="contact">
+  <div class="footer-container">
+    <!-- Column 1: Logo & About -->
+    <div class="footer-column">
+      <h2 class="footer-logo">VenueBook</h2>
+      <p>Your one-stop destination for discovering and booking venues across India.</p>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#venues">Venues</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Contact Form -->
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <form id="footer-contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="3" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 VenueBook. All rights reserved.</p>
+  </div>
+</footer>
+
+
+  
+  <!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" title="Back to top">↑</button>
+  <script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+</body>
+</html>

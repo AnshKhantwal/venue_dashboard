@@ -127,24 +127,29 @@ function setupBookingHandlers(blockedDates = []) {
 
     // Initialize flatpickr
     flatpickr(dateInput, {
-      dateFormat: "Y-m-d",
-      disable: disabledRanges,
-      onChange: function (selectedDates, dateStr) {
-        isBlocked = disabledRanges.some(range => {
-          const d = new Date(dateStr);
-          return d >= new Date(range.from) && d <= new Date(range.to);
-        });
-
-        if (isBlocked) {
-          alert(`Booking is blocked for "${venueName}" on this date.`);
-          submitBtn.disabled = true;
-          submitBtn.style.backgroundColor = "#ccc";
-        } else {
-          submitBtn.disabled = false;
-          submitBtn.style.backgroundColor = "";
-        }
-      }
+  dateFormat: "Y-m-d",
+  disable: disabledRanges,
+  allowInput: true, // Allows manual typing and keeps placeholder
+  onReady: function(selectedDates, dateStr, instance) {
+    instance.input.placeholder = "Select Date";
+  },
+  onChange: function (selectedDates, dateStr) {
+    isBlocked = disabledRanges.some(range => {
+      const d = new Date(dateStr);
+      return d >= new Date(range.from) && d <= new Date(range.to);
     });
+
+    if (isBlocked) {
+      submitBtn.disabled = true;
+      submitBtn.style.backgroundColor = "#ccc";
+      alert(`Booking is blocked for "${venueName}" on this date.`);
+    } else {
+      submitBtn.disabled = false;
+      submitBtn.style.backgroundColor = "";
+    }
+  }
+});
+
 
     // Toggle booking form
     btn.addEventListener("click", () => {

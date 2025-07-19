@@ -14,6 +14,7 @@ A full-stack venue booking system where users can view available venues, see blo
 Add new venue with name, image, description, location, capacity
 Update and delete venues
 Block booking dates for a venue (start_date to end_date)
+Unblocking any dates for a venue
 View user bookings
 
 ### User:

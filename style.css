@@ -735,12 +735,3 @@ html {
 }
 
 
-@media screen and (max-width: 500px) {
-  .booking-form {
-    grid-template-columns: 1fr; /* stack on small screens */
-  }
-
-  .booking-form button {
-    grid-column: span 1;
-  }
-}

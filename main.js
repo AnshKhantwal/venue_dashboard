@@ -182,3 +182,5 @@ function setupBookingHandlers(blockedDates = []) {
     });
   });
 }
+
+

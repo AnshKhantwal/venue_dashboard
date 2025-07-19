@@ -193,4 +193,52 @@ bookingList.appendChild(card);
 }
 
 
+// Load blocked dates from backend and display them
+function loadBlockedDates() {
+  fetch("http://localhost:5000/api/admin/blocked-dates")
+    .then(res => res.json())
+    .then(data => {
+      const blockedList = document.getElementById("blockedList");
+      if (!blockedList) return;
+
+      blockedList.innerHTML = data.length === 0
+        ? "<p>No blocked dates found.</p>"
+        : data.map(block => `
+          <div class="blocked-item">
+            <strong>${block.venue_name}</strong><br>
+            From: ${block.start_date} To: ${block.end_date}
+            <button onclick="unblockDate(${block.id})">Unblock</button>
+          </div>
+        `).join('');
+    })
+    .catch(err => {
+      console.error("Error loading blocked dates:", err);
+    });
+}
+
+// Unblock a specific blocked date
+function unblockDate(id) {
+  fetch(`http://localhost:5000/api/admin/blocked-dates/${id}`, {
+    method: "DELETE"
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        alert("Date unblocked successfully!");
+        loadBlockedDates(); // Refresh the list
+      } else {
+        alert("Failed to unblock date.");
+      }
+    })
+    .catch(err => {
+      console.error("Error unblocking date:", err);
+    });
+}
+
+// Load on page load
+document.addEventListener("DOMContentLoaded", () => {
+  loadBlockedDates();
+});
+
+
 fetchVenues(); 

@@ -117,4 +117,25 @@ res.json({ message: 'Login successful', admin: results[0] });
 });
 });
 
+
+
+
+// DELETE /api/admin/blocked-dates/:id
+router.delete('/blocked-dates/:id', (req, res) => {
+  const id = req.params.id;
+  const sql = 'DELETE FROM blocked_dates WHERE id = ?';
+  db.query(sql, [id], (err, result) => {
+    if (err) {
+      console.error("Error deleting blocked date:", err);
+      return res.status(500).json({ error: "Database error" });
+    }
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Blocked date not found" });
+    }
+    return res.json({ success: true });
+  });
+});
+
+
+
 module.exports = router; // This must be included

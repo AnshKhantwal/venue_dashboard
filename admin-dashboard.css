@@ -232,3 +232,27 @@ button[type="submit"]:hover {
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
+
+
+.blocked-item {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #fefefe;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.blocked-item button {
+  margin-top: 5px;
+  background-color: #d9534f;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.blocked-item button:hover {
+  background-color: #c9302c;
+}

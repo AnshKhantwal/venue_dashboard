@@ -1,8 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const adminRoutes = require('./routes/admin'); // Ensure this file exists and exports a router
-
+const adminRoutes = require('./routes/admin'); 
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));

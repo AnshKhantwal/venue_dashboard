@@ -29,13 +29,7 @@ res.json({ message: 'Venue added successfully' });
 });
 });
 
-// 2. Get All Venues
-// router.get('/venues', (req, res) => {
-// db.query('SELECT * FROM venues', (err, rows) => {
-// if (err) return res.status(500).json({ error: err.message });
-// res.json(rows);
-// });
-// });
+
 router.get('/venues', async (req, res) => {
   try {
     const [rows] = await db.promise().query('SELECT * FROM venues');
@@ -111,16 +105,6 @@ res.json(rows);
 });
 
 
-
-
-
-
-
-
-
-
-
-
 router.post('/login', (req, res) => {
 const { username, password } = req.body;
 const sql = 'SELECT * FROM admins WHERE username = ? AND password = ?';
@@ -133,4 +117,4 @@ res.json({ message: 'Login successful', admin: results[0] });
 });
 });
 
-module.exports = router; // ✅ This must be included
+module.exports = router; // This must be included

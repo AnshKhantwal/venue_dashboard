@@ -1,131 +1,3 @@
-// const tabs = document.querySelectorAll('.tab-link');
-// const contents = document.querySelectorAll('.tab-content');
-
-// tabs.forEach(tab => {
-//   tab.addEventListener('click', () => {
-//     tabs.forEach(t => t.classList.remove('active'));
-//     contents.forEach(c => c.classList.remove('active'));
-//     tab.classList.add('active');
-//     const tabId = tab.dataset.tab;
-//     document.getElementById(tabId).classList.add('active');
-
-//     if (tabId === 'bookings') loadBookings();
-//   });
-// });
-
-// const venueList = document.getElementById('venueList');
-// const venueDropdown = document.getElementById('venueDropdown');
-
-// let venues = [];
-
-// document.getElementById('addVenueForm').addEventListener('submit', function (e) {
-//   e.preventDefault();
-//   const name = document.getElementById('venueName').value;
-//   const location = document.getElementById('venueLocation').value;
-//   const capacity = document.getElementById('venueCapacity').value;
-//   const description = document.getElementById('venueDescription').value;
-
-//   const venue = {
-//     id: Date.now(),
-//     name,
-//     location,
-//     capacity,
-//     description
-//   };
-//   venues.push(venue);
-//   renderVenues();
-//   updateDropdown();
-//   this.reset();
-// });
-
-// function renderVenues() {
-//   venueList.innerHTML = '';
-//   venues.forEach(venue => {
-//     const card = document.createElement('div');
-//     card.className = 'venue-card';
-
-//     card.innerHTML = `
-//       <input type="text" value="${venue.name}" />
-//       <input type="text" value="${venue.location}" />
-//       <input type="number" value="${venue.capacity}" />
-//       <textarea>${venue.description}</textarea>
-//       <div class="card-buttons">
-//         <button class="edit-btn">Save</button>
-//         <button class="delete-btn">Delete</button>
-//       </div>
-//     `;
-
-//     const [nameInput, locationInput, capacityInput, descInput] = card.querySelectorAll('input, textarea');
-
-//     card.querySelector('.edit-btn').addEventListener('click', () => {
-//       venue.name = nameInput.value;
-//       venue.location = locationInput.value;
-//       venue.capacity = capacityInput.value;
-//       venue.description = descInput.value;
-//       alert('Venue updated successfully!');
-//     });
-
-//     card.querySelector('.delete-btn').addEventListener('click', () => {
-//       venues = venues.filter(v => v.id !== venue.id);
-//       renderVenues();
-//       updateDropdown();
-//     });
-
-//     venueList.appendChild(card);
-//   });
-// }
-
-// function updateDropdown() {
-//   venueDropdown.innerHTML = '';
-//   venues.forEach(v => {
-//     const option = document.createElement('option');
-//     option.value = v.id;
-//     option.textContent = v.name;
-//     venueDropdown.appendChild(option);
-//   });
-// }
-
-// document.getElementById('blockDateForm').addEventListener('submit', function (e) {
-//   e.preventDefault();
-//   const venueId = document.getElementById('venueDropdown').value;
-//   const start = document.getElementById('startDate').value;
-//   const end = document.getElementById('endDate').value;
-//   const venue = venues.find(v => v.id == venueId);
-//   alert(`Blocked "${venue.name}" from ${start} to ${end}`);
-//   this.reset();
-// });
-
-// document.getElementById('logoutBtn').addEventListener('click', function () {
-//   alert("Logout Successfully!");
-//   window.location.href = '../admin-login.html';
-// });
-
-// function loadBookings() {
-//   const bookingList = document.getElementById("bookingList");
-//   const stored = localStorage.getItem("bookings");
-//   const bookings = stored ? JSON.parse(stored) : [];
-
-//   bookingList.innerHTML = '';
-
-//   if (bookings.length === 0) {
-//     bookingList.innerHTML = '<p>No bookings found.</p>';
-//     return;
-//   }
-
-//   bookings.forEach(b => {
-//     const card = document.createElement('div');
-//     card.className = "booking-card";
-//     card.innerHTML = `
-//       <h3>${b.venue}</h3>
-//       <p><strong>Name:</strong> ${b.name}</p>
-//       <p><strong>Email:</strong> ${b.email}</p>
-//       <p><strong>Date:</strong> ${b.date}</p>
-//       <p><strong>Attendees:</strong> ${b.attendees}</p>
-//     `;
-//     bookingList.appendChild(card);
-//   });
-// }
-
 let venues = [];
 const tabs = document.querySelectorAll('.tab-link');
 const contents = document.querySelectorAll('.tab-content');
@@ -180,7 +52,7 @@ async function fetchVenues() {
 try {
 const res = await fetch('http://localhost:5000/api/admin/venues');
 const data = await res.json();
-venues = data; // ✅ this updates the global array
+venues = data; // this updates the global array
 renderVenues();
 updateDropdown();
 } catch (err) {
@@ -321,4 +193,4 @@ bookingList.appendChild(card);
 }
 
 
-fetchVenues(); // preload if needed
+fetchVenues(); 

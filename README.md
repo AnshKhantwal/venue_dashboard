@@ -104,3 +104,14 @@ CREATE TABLE admins (
     username VARCHAR(100),
     password VARCHAR(100)
 );
+
+### prefilled database
+INSERT INTO admins (username, password)
+VALUES ('admin', 'admin123');
+
+
+## Default Login Credentials for Owner/Admin SignIn 
+
+### username- admin 
+### password- admin123
+

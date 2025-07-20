@@ -11,10 +11,6 @@ app.use('/uploads', express.static('uploads'));
 
 app.use('/api/admin', adminRoutes); // All /admin routes handled here
 
-// app.listen(5000, () => {
-//   console.log('Server running on http://localhost:5000');
-// });
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(5000, () => {
+  console.log('Server running on http://localhost:5000');
 });

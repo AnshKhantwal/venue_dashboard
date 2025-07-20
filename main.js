@@ -183,4 +183,3 @@ function setupBookingHandlers(blockedDates = []) {
   });
 }
 
-

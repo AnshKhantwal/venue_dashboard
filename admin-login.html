@@ -5,8 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Login - VenueHub</title>
   <link rel="stylesheet" href="admin-login.css" />
+  <style>
+    .back-link {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #333;
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      border-radius: 5px;
+      background: #fff;
+      transition: all 0.3s;
+    }
+
+    .back-link:hover {
+      background: #eaeaea;
+    }
+  </style>
 </head>
 <body>
+  <a href="index.html" class="back-link">⬅ Back to Home</a>
   <div class="login-container">
     <form id="loginForm" class="login-card">
       <center><h2>Admin Sign In</h2>
